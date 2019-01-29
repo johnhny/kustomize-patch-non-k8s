@@ -1,5 +1,5 @@
-apiVersion: apps/v1beta2
-kind: Deployment
+apiVersion: v1beta1
+kind: Bee
 metadata:
   name: wordpress
 spec:
@@ -8,9 +8,6 @@ spec:
       initContainers:
       - name: init-command
         image: debian
-        command:
-        - "echo $(WORDPRESS_SERVICE)"
-        - "echo $(MYSQL_SERVICE)"
       containers:
       - name: wordpress
         env:
